@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaCheck } from "react-icons/fa";
 import style from "./TaskItem.module.css";
 
 function TaskItem(props) {
@@ -11,10 +11,10 @@ function TaskItem(props) {
       </div>
       <div className={style.item_button_container}>
         <button className={style.item_button}>
-          <FaTimes color="red" />
+          <FaCheck color="#51cf66" />
         </button>
         <button className={style.item_button}>
-          <FaTimes color="red" />
+          <FaTimes color="#ff6b6b" />
         </button>
       </div>
     </div>
