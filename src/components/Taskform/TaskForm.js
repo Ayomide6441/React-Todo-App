@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Card from "../UI/Card";
 import styles from "./TaskForm.module.css";
-import data from "../Task/Data";
 
 function TaskForm(props) {
   const [enteredTitle, setEneteredTitle] = useState("");
   const [enteredDescription, setEneteredDescription] = useState("");
-  const [tasks, setTasks] = useState(data);
 
   function titleChangeHandler(event) {
     setEneteredTitle(event.target.value);
@@ -22,9 +20,6 @@ function TaskForm(props) {
       description: enteredDescription,
     };
     props.onSaveTaskData(task);
-    setTasks(function (prevTasks) {
-      return [task, ...prevTasks];
-    });
     setEneteredTitle("");
     setEneteredDescription("");
     e.preventDefault();
