@@ -9,7 +9,7 @@
   outline: 1.5px solid #ff922b;
   border: 0;
 }
-button {
+.button {
   background-color: #2f9e44;
   color: #fff;
   padding: 1rem;

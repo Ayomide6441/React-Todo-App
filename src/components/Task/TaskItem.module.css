@@ -1,0 +1,28 @@
+.item_container {
+  background-color: #ffc078;
+  display: flex;
+  min-width: 19.33rem;
+  flex-grow: 1;
+  border-radius: 4px;
+}
+.item_content_container {
+  padding: 1rem;
+  flex-grow: 1;
+}
+.content_heading {
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+.item_button_container {
+  padding: 1rem;
+  border-left: 1px solid #000;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.item_button {
+  border: 0;
+  background-color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+}

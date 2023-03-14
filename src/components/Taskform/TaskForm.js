@@ -3,7 +3,7 @@ import Card from "../UI/Card";
 import styles from "./TaskForm.module.css";
 import data from "../Task/Data";
 
-function TaskForm() {
+function TaskForm(props) {
   const [enteredTitle, setEneteredTitle] = useState("");
   const [enteredDescription, setEneteredDescription] = useState("");
   const [tasks, setTasks] = useState(data);
@@ -17,9 +17,13 @@ function TaskForm() {
   }
 
   function addTaskHandler(e) {
-    console.log(enteredTitle, enteredDescription);
+    const task = {
+      title: enteredTitle,
+      description: enteredDescription,
+    };
+    props.onSaveTaskData(task);
     setTasks(function (prevTasks) {
-      return [tasks, ...prevTasks];
+      return [task, ...prevTasks];
     });
     setEneteredTitle("");
     setEneteredDescription("");
@@ -49,7 +53,11 @@ function TaskForm() {
             onChange={descriptionChangeHandler}
           />
         </div>
-        <button type="submit" onClick={addTaskHandler}>
+        <button
+          className={styles.button}
+          type="submit"
+          onClick={addTaskHandler}
+        >
           Add
         </button>
       </form>
