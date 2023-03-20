@@ -15,11 +15,18 @@ const App = () => {
       return [taskData, ...prevTasks];
     });
   };
+
+  const deleteItemHandler = (title) => {
+    return setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.title !== title);
+      return updatedTasks;
+    });
+  };
   return (
     <>
       <h1 className="heading">ToDo App</h1>
       <TaskForm onSaveTaskData={saveTaskDataHandler} />
-      <TaskList task={tasks} />
+      <TaskList task={tasks} onDeleteItem={deleteItemHandler} />
     </>
   );
 };
