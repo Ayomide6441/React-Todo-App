@@ -22,11 +22,18 @@ const App = () => {
       return updatedTasks;
     });
   };
+  const completeItemHandler = (completed) => {
+    console.log(completed);
+  };
   return (
     <>
       <h1 className="heading">ToDo App</h1>
       <TaskForm onSaveTaskData={saveTaskDataHandler} />
-      <TaskList task={tasks} onDeleteItem={deleteItemHandler} />
+      <TaskList
+        task={tasks}
+        onDeleteItem={deleteItemHandler}
+        onCompleteItem={completeItemHandler}
+      />
     </>
   );
 };

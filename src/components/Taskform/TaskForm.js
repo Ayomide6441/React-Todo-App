@@ -18,6 +18,7 @@ function TaskForm(props) {
     const task = {
       title: enteredTitle,
       description: enteredDescription,
+      completed: false,
     };
     props.onSaveTaskData(task);
     setEneteredTitle("");
