@@ -16,7 +16,7 @@ function TaskList(props) {
             index={props.task[index]}
             onDelete={props.onDeleteItem}
             completed={data.completed}
-            onComplete={props.onCompleteItem}
+            toggleComplete={props.toggleComplete}
           />
         );
       })}

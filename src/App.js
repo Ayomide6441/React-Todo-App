@@ -22,8 +22,17 @@ const App = () => {
       return updatedTasks;
     });
   };
-  const completeItemHandler = (completed) => {
-    console.log(completed);
+  const toggleComplete = (title) => {
+    console.log(title);
+    setTasks((task) => {
+      const newTasks = task.map((t) => {
+        if (t.title === title) {
+          return { ...t, completed: !t.completed };
+        }
+        return t;
+      });
+      return newTasks;
+    });
   };
   return (
     <>
@@ -32,7 +41,7 @@ const App = () => {
       <TaskList
         task={tasks}
         onDeleteItem={deleteItemHandler}
-        onCompleteItem={completeItemHandler}
+        toggleComplete={toggleComplete}
       />
     </>
   );
